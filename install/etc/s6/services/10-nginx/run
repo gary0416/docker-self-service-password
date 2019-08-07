@@ -59,6 +59,7 @@ if [ ! -f /tmp/state/10-nginx ]; then
 	SHOW_HELP=${SHOW_HELP:-true}
 	SMTP_AUTH_ON=${SMTP_AUTH_ON:-false}
 	SMTP_AUTOTLS=${SMTP_AUTOTLS:-false}
+	SMTP_SECURE=${SMTP_SECURE:-false}
 	SMTP_DEBUG=${SMTP_DEBUG:-0}
 	SMTP_HOST=${SMTP_HOST:-}
 	SMTP_PASS=${SMTP_PASS:-}
@@ -122,6 +123,7 @@ if [ ! -f /tmp/state/10-nginx ]; then
 	sed -i -e "s/<SMTP_PORT>/$SMTP_PORT/g" /assets/ssp/config.inc.php.template
 	sed -i -e "s/<SMTP_SECURE_TYPE>/$SMTP_SECURE_TYPE/g" /assets/ssp/config.inc.php.template
 	sed -i -e "s/<SMTP_AUTOTLS>/$SMTP_AUTOTLS/g" /assets/ssp/config.inc.php.template
+	sed -i -e "s/<SMTP_SECURE>/$SMTP_SECURE/g" /assets/ssp/config.inc.php.template
 	sed -i -e "s/<USE_SMS>/$USE_SMS/g" /assets/ssp/config.inc.php.template
 	sed -i -e "s|<LOGO>|$LOGO|g" /assets/ssp/config.inc.php.template
 	sed -i -e "s|<BACKGROUND>|$BACKGROUND|g" /assets/ssp/config.inc.php.template
